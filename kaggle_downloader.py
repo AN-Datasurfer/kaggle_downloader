@@ -25,6 +25,6 @@ api.authenticate()
 # Define the dataset path
 dataset = 'oluwademiladeadeniyi/mtn-nigeria-customer-churn'
 # Download dataset
-api.dataset_download_files(dataset, path='datasets', unzip=True)
+api.dataset_download_files(dataset, path='datasets', unzip=True, force=True)
 print(f"Dataset {dataset} downloaded and unzipped successfully.")
 
