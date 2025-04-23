@@ -1,11 +1,14 @@
-#it is used to download datasets from the internet
+''' It is used to download datasets from the internet
 
-# Download the dataset from Kaggle using Kaggle API
+  Download the dataset from Kaggle using Kaggle API
 
-# Ensure you have the Kaggle API installed
-# pip install kaggle
-# Make sure to set your Kaggle API credentials in the environment variables
-# Alternatively, you can set them directly in the script (not recommended for security reasons)
+ Ensure you have the Kaggle API installed
+You can install it using pip if you haven't already : pip install kaggle
+
+Make sure to set your Kaggle API credentials in the environment variables KAGGLE_USERNAME and KAGGLE_KEY.
+You can do this on  Kaggle's website by going to your account settings and creating a new API token. This will download a file called kaggle.json, which contains your credentials.
+
+Alternatively, you can set them directly in the script (not recommended for security reasons) '''
 
 # Import necessary libraries
 import os
@@ -19,5 +22,9 @@ os.environ['KAGGLE_KEY'] = 'your_kaggle_api_key'
 api = KaggleApi()
 api.authenticate()
 
+# Define the dataset path
+dataset = 'oluwademiladeadeniyi/mtn-nigeria-customer-churn'
 # Download dataset
-api.dataset_download_files('abdulmalik1518/mobiles-dataset-2025', path='datasets', unzip=True)
+api.dataset_download_files(dataset, path='datasets', unzip=True)
+print(f"Dataset {dataset} downloaded and unzipped successfully.")
+
